@@ -1,0 +1,63 @@
+<syntax name="clojure">
+  <meta>
+    <name>Clojure</name>
+    <type>structured</type>
+    <preferred-file-extension>clj</preferred-file-extension>
+  </meta>
+
+  <detectors>
+    <extension priority="1.0">clj,cljs,cljc</extension>
+  </detectors>
+
+  <indentation>
+      <increase>
+          <expression>(\{[^}\"']*$)|(\[[^\]\"']*$)|(\([^)\"']*$)</expression>
+      </increase>
+      <decrease>
+          <expression>^\s*(\s*/\*.*\*/\s*)*[\}\]\)\\]</expression>
+      </decrease>
+  </indentation>
+
+  <comments>
+    <single>
+      <expression>;;</expression>
+    </single>
+  </comments>
+
+  <brackets>
+    <pair open="(" close=")"/>
+    <pair open="[" close="]"/>
+    <pair open="{" close="}"/>
+  </brackets>
+
+  <surrounding-pairs>
+      <pair open="{" close="}" />
+      <pair open="[" close="]" />
+      <pair open="(" close=")" />
+      <pair open="'" close="'" />
+  </surrounding-pairs>
+
+  <scopes>
+    <scope name="clojure.string">
+      <expression>&quot;[^&quot;]*&quot;</expression>
+    </scope>
+    <scope name="clojure.number">
+        <expression>\d+</expression>
+    </scope>
+    <scope name="clojure.keyword.defn">
+      <expression>defn</expression>
+    </scope>
+    <scope name="clojure.keyword.ns">
+      <expression>ns</expression>
+    </scope>
+    <scope name="clojure.keyword.let">
+      <expression>let</expression>
+    </scope>
+    <scope name="clojure.keyword.if">
+      <expression>if</expression>
+    </scope>
+    <scope name="clojure.keyword.fn">
+      <expression>fn</expression>
+    </scope>
+  </scopes>
+</syntax>
