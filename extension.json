@@ -1,0 +1,24 @@
+{
+    "identifier": "com.vijaykiran.nclojure",
+    "name": "nclojure",
+    "organization": "VijayKiran",
+    "description": "Clojure Extension for Nova",
+    "version": "0.0.1",
+    "categories": ["completions", "formatters", "issues","languages"],
+
+    "main": "main.js",
+
+    "entitlements": {
+        "process": true,
+        "filesystem": "readonly"
+    },
+
+    "config": [
+        {
+            "key": "nclojure.language-server-path",
+            "title": "Clojure LSP Path",
+            "type": "path",
+            "placeholder": "/usr/local/bin/clojure-lsp"
+        }
+    ]
+}
